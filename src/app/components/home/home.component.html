@@ -1,0 +1,29 @@
+<div class="logout-container">
+  <button (click)="logout()" mat-flat-button color="primary">Log-out</button>
+</div>
+
+<table
+  mat-table
+  [dataSource]="dataSource"
+  class="mat-elevation-z8">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Product Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <!-- Price Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let element">{{ element.price | number: '1.2-2' }}</td>
+  </ng-container>
+
+  <!-- Creation Date Column -->
+  <ng-container matColumnDef="creationDate">
+    <th mat-header-cell *matHeaderCellDef>Creation Date</th>
+    <td mat-cell *matCellDef="let element">{{ element.creationDate | date: 'dd/MM/yyyy' }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

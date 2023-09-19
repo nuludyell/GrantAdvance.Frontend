@@ -1,0 +1,18 @@
+mat-card {
+  max-width: 43rem;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 37.5rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.emailInput {
+  padding-top: 2em;
+}

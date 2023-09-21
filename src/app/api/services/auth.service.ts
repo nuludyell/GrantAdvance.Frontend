@@ -59,6 +59,11 @@ export class AuthService {
       return true;
     }
 
-    return (1000 * expiryTime) <= (new Date()).getTime();
+    if ((1000 * expiryTime) > (new Date()).getTime()) {
+      return false;
+    }
+
+    localStorage.removeItem('token');
+    return true;
   }
 }

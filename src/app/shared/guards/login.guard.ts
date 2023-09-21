@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/api/services/auth.service';
 export const loginGuard: CanActivateFn = (route, state) => {
   const authService: AuthService = inject(AuthService);
 
-  if (!authService.isLoggedIn()) {
+  if (authService.isTokenExpired()) {
     return true;
   }
 
